@@ -4,14 +4,27 @@ function saludar()  {
     document.write('Hola mundo');
     let prueba = 'test';
 }
+
 // funcion con parametros
-function saludarPersona(nombre, apellidoRecibido ){   
+// function saludarPersona(nombre, apellidoRecibido ){   
+//     document.write(`<br>Hola mi nombre es: ${nombre} y mi apellido es: ${apellidoRecibido}`); 
+// }
+
+let saludarPersona = (nombre, apellidoRecibido) =>{
     document.write(`<br>Hola mi nombre es: ${nombre} y mi apellido es: ${apellidoRecibido}`); 
 }
 
 // funcion que retorna valor
-function convertirDolaresAPesos(dolares){
+// function convertirDolaresAPesos(dolares){
+//     let pesosFinales = dolares * 210;
+//     console.log(pesosFinales);
+//     return pesosFinales;
+// }
+
+// ES6 arrow functions
+const convertirDolaresAPesos = (dolares) =>{
     let pesosFinales = dolares * 210;
+    console.log(pesosFinales);
     return pesosFinales;
 }
 
@@ -29,3 +42,8 @@ saludarPersona(nombre1,'Cardozo');
 
 let pesosSinImpuestos = convertirDolaresAPesos(60);
 document.write(`<br>Juego en pesos $ ${pesosSinImpuestos}`);
+document.write(`<br>Juego en pesos $ ${convertirDolaresAPesos(10)}`);
+
+convertirDolaresAPesos(120);
+
+
