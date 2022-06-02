@@ -15,7 +15,7 @@ let usuarioFrancisco = {
     estado: true,
     // metodos o funciones
     cambiarPassword: () =>{
-        document.write('Nuevo password');
+        document.write('<br>Nuevo password');
     }
 }
 
@@ -36,3 +36,14 @@ document.write(`<br>Estado: ${usuarioFrancisco.estado}`);
 usuarioFrancisco.direccion = 'Tucuman';
 document.write(`<br>Direccion: ${usuarioFrancisco.direccion}`);
 
+// invocar a un metodo del objeto
+usuarioFrancisco.cambiarPassword();
+
+// crear un bucle que muestre todo el objeto
+let claves = Object.keys(usuarioFrancisco); // ['nombreUsuario','nombre','...','cambiarPassword']
+console.log(claves);
+
+console.log(usuarioFrancisco.length)
+for(let indice=0; indice < claves.length; indice++){
+    document.write(`<br>${claves[indice]}: ${usuarioFrancisco[claves[indice]]}`)
+}
