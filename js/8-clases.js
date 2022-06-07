@@ -1,3 +1,5 @@
+
+// comision, antiguedad, horarios: (part-time, full-time), tipo de contrato 
 // crear una clase
 class Usuario{
     //primero creamos un metodo constructor
@@ -10,11 +12,7 @@ class Usuario{
         this.direccion = direccionParam;
     }
     // definir los metodos
-    cambiarPassword(){
-        document.write('<br>Cambiando el password...');
-    }
-
-    mostrarDatos(){
+     mostrarDatos(){
         document.write(`<br>
         <ul>
             <li>Nombre: ${this.nombre}</li> 
@@ -24,6 +22,36 @@ class Usuario{
             <li>Nombre usuario: ${this.nombreUsuario} </li>
         </ul>`)
     }
+
+    cambiarPassword(){
+        document.write('<br>Cambiando el password...');
+    }
+
+    // propiedades conmutadas get y set
+    get mostrarNombreUsuario(){
+        return this.nombreUsuario;
+    }
+
+    get mostrarDireccion(){
+        return this.direccion;
+    }
+    // setter
+    set modificarDireccion(nuevaDireccion ){
+        this.direccion = nuevaDireccion;
+    }
+
+}
+// clase alumno que hereda de usuario
+// comision, notas, legajo, estado, asistencia
+class Alumno extends Usuario {
+    //primer metodo
+    constructor(comision, legajo, estado, nombre, apellido, nombreUsuario, password, email, direccion ) {
+    //    invocar al constructor de la clase usuario
+        super(nombreUsuario, nombre, apellido, email, password, direccion);
+        this.comision= comision;
+        this.legajo = legajo;
+        this.estado = estado
+    } 
 }
 
 // Como crear un objeto o instancia
@@ -34,3 +62,10 @@ console.log(userValentina);
 
 userValentina.mostrarDatos();
 userJuan.mostrarDatos();
+
+document.write(`El nombre del usuario es ${userValentina.mostrarNombreUsuario}`);
+document.write(`<br>La direccion del usuario ${userJuan.mostrarNombreUsuario} es ${userJuan.mostrarDireccion}`);
+
+userJuan.modificarDireccion = 'Tucumán'
+document.write(`<br>La direccion del usuario ${userJuan.mostrarNombreUsuario} es ${userJuan.mostrarDireccion}`);
+
